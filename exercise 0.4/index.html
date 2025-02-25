@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 0.4</title>
+</head>
+<body>
+    <h1>
+        Part 0 | Exercise 0.4 New Note
+    </h1>
+
+    <hr>
+
+    <h2>Sebastián Lamprea Manrique</h2>
+
+    <pre class="mermaid">
+        sequenceDiagram
+        participant browser
+        participant server
+    
+        browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+        activate server
+        server-->>browser: Response Status code 302 
+        deactivate server
+
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+        activate server
+        server-->>browser: HTML document
+        deactivate server
+    
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+        activate server
+        server-->>browser: the css file
+        deactivate server
+    
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        activate server
+        server-->>browser: the JavaScript file
+        deactivate server
+    
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        activate server
+        server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+        deactivate server
+    </pre>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </body>
+</html>

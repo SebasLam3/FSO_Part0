@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 0.6</title>
+</head>
+<body>
+    <h1>
+        Part 0 | Exercise 0.6 SPA New Note
+    </h1>
+
+    <hr>
+
+    <h2>Sebastián Lamprea Manrique</h2>
+
+    <pre class="mermaid">
+        sequenceDiagram
+        participant browser
+        participant server
+    
+        browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa ({"content": "New note", "date": "2025-02-24"})
+        activate server
+        server-->>browser: { "message": "note created" }
+        deactivate server
+    
+        Note right of browser: The new note is added to the UI instantly    
+    </pre>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </body>
+</html>
